@@ -9,17 +9,38 @@ import Foundation
 import SwiftData
 
 @Model
-final class Story {
-    var id: UUID
+final class Story: Identifiable {
+    @Attribute(.unique) var id: UUID
     var title: String
-    var initialPrompt: String
     var chapters: [Chapter]
-    
-    init(title: String, initialPrompt: String, chapters: [Chapter] = []) {
+    var prompt: String
+    var isCompleted: Bool // To track if the story is fully created
+
+    init(title: String, chapters: [Chapter] = [], prompt: String, isCompleted: Bool = false) {
         self.id = UUID()
         self.title = title
-        self.initialPrompt = initialPrompt
         self.chapters = chapters
+        self.prompt = prompt
+        self.isCompleted = isCompleted
+    }
+
+    // MARK: - Persistence Functions
+
+    /// Saves the story to the SwiftData context.
+    func save(context: ModelContext?) {
+        guard let context = context else {
+            print("Error: ModelContext is nil. Cannot save.")
+            return
+        }
+        context.insert(self)
+    }
+
+    /// Deletes the story from the SwiftData context.
+    func delete(context: ModelContext?) {
+        guard let context = context else {
+            print("Error: ModelContext is nil. Cannot delete.")
+            return
+        }
+        context.delete(self)
     }
 }
-       

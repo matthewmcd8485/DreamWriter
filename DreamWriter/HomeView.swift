@@ -39,7 +39,7 @@ struct HomeView: View {
                         ModeSelectionButton(symbolName: "brain", title: "Create a New Story", subtitle: "Use generative AI models to write and illustrate a story about any topic you'd like.")
                     }
                     
-                    NavigationLink(destination: BrowseStoriesView()) {
+                    NavigationLink(destination: LibraryView()) {
                         ModeSelectionButton(symbolName: "books.vertical", title: "Personal Library", subtitle: "Take a look through all the stories you've made in the past.")
                     }
                     
@@ -61,13 +61,7 @@ struct HomeView: View {
     }
 }
 
-struct BrowseStoriesView: View {
-    var body: some View {
-        Text("Browse Stories View")
-            .navigationTitle("Previous Stories")
-    }
-}
-
 #Preview {
     HomeView()
+        .modelContainer(for: [Story.self, Chapter.self], inMemory: true)
 }

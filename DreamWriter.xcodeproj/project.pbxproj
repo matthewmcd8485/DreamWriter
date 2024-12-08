@@ -20,6 +20,11 @@
 		7B93FE302D0559450058F09A /* ModeSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE2F2D0559450058F09A /* ModeSelectionButton.swift */; };
 		7B93FE322D0559720058F09A /* PromptInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE312D0559720058F09A /* PromptInputView.swift */; };
 		7B93FE352D056A3A0058F09A /* SwiftOpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 7B93FE342D056A3A0058F09A /* SwiftOpenAI */; };
+		7B93FE372D056E580058F09A /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE362D056E580058F09A /* LibraryView.swift */; };
+		7B93FE392D056FA90058F09A /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE382D056FA90058F09A /* StoryView.swift */; };
+		7B93FE3B2D05700C0058F09A /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE3A2D05700C0058F09A /* ChapterView.swift */; };
+		7B93FE3D2D057C2D0058F09A /* LibraryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE3C2D057C2D0058F09A /* LibraryListItemView.swift */; };
+		7B93FE3F2D057C580058F09A /* ChapterListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE3E2D057C580058F09A /* ChapterListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		7B93FE2D2D054F5E0058F09A /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		7B93FE2F2D0559450058F09A /* ModeSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionButton.swift; sourceTree = "<group>"; };
 		7B93FE312D0559720058F09A /* PromptInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptInputView.swift; sourceTree = "<group>"; };
+		7B93FE362D056E580058F09A /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		7B93FE382D056FA90058F09A /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
+		7B93FE3A2D05700C0058F09A /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
+		7B93FE3C2D057C2D0058F09A /* LibraryListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryListItemView.swift; sourceTree = "<group>"; };
+		7B93FE3E2D057C580058F09A /* ChapterListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -128,10 +138,15 @@
 			isa = PBXGroup;
 			children = (
 				7B93FE1C2D0548080058F09A /* DreamWriterApp.swift */,
+				7B93FE262D05496D0058F09A /* AboutView.swift */,
 				7B93FE1B2D0548080058F09A /* HomeView.swift */,
 				7B93FE2F2D0559450058F09A /* ModeSelectionButton.swift */,
 				7B93FE312D0559720058F09A /* PromptInputView.swift */,
-				7B93FE262D05496D0058F09A /* AboutView.swift */,
+				7B93FE362D056E580058F09A /* LibraryView.swift */,
+				7B93FE3C2D057C2D0058F09A /* LibraryListItemView.swift */,
+				7B93FE3E2D057C580058F09A /* ChapterListItemView.swift */,
+				7B93FE382D056FA90058F09A /* StoryView.swift */,
+				7B93FE3A2D05700C0058F09A /* ChapterView.swift */,
 				7B93FE282D054A510058F09A /* BackgroundView.swift */,
 				7B93FE2A2D054F3B0058F09A /* Story Management */,
 				7B93FE1A2D0548080058F09A /* Assets.xcassets */,
@@ -304,10 +319,15 @@
 				7B93FE302D0559450058F09A /* ModeSelectionButton.swift in Sources */,
 				7B93FE272D05496D0058F09A /* AboutView.swift in Sources */,
 				7B93FE292D054A510058F09A /* BackgroundView.swift in Sources */,
+				7B93FE372D056E580058F09A /* LibraryView.swift in Sources */,
 				7B93FE2E2D054F5E0058F09A /* Chapter.swift in Sources */,
+				7B93FE3B2D05700C0058F09A /* ChapterView.swift in Sources */,
 				7B93FE322D0559720058F09A /* PromptInputView.swift in Sources */,
 				7B93FE212D0548080058F09A /* DreamWriterApp.swift in Sources */,
+				7B93FE392D056FA90058F09A /* StoryView.swift in Sources */,
 				7B93FE2C2D054F450058F09A /* Story.swift in Sources */,
+				7B93FE3D2D057C2D0058F09A /* LibraryListItemView.swift in Sources */,
+				7B93FE3F2D057C580058F09A /* ChapterListItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

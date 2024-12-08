@@ -47,7 +47,7 @@
     <resources>
         <image name="RoundedLogo.png" width="1024" height="1024"/>
         <namedColor name="darkerNavy">
-            <color red="0.046219405594405592" green="0.10196078431372549" blue="0.19236232517482518" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.043137254901960784" green="0.10196078431372549" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -12,15 +12,19 @@ import SwiftData
 @Model
 final class Chapter {
     var id: UUID
-    var text: String
+    var title: String
+    var text: String?
     var number: Int
     var image: Data?
+    var isCreated: Bool
     
-    init(text: String, number: Int, image: Data? = nil) {
+    init(number: Int, title: String, text: String?, image: Data? = nil, isCreated: Bool) {
         self.id = UUID()
+        self.title = title
         self.text = text
         self.number = number
         self.image = image
+        self.isCreated = isCreated
     }
     
     /// Converts the stored image data into a SwiftUI `Image` object if valid.
@@ -67,5 +71,25 @@ final class Chapter {
         default:
             return ""
         }
+    }
+    
+    // MARK: - Persistence Functions
+
+    /// Saves the chapter to the SwiftData context.
+    func save(context: ModelContext?) {
+        guard let context = context else {
+            print("Error: ModelContext is nil. Cannot save chapter.")
+            return
+        }
+        context.insert(self)
+    }
+
+    /// Deletes the chapter from the SwiftData context.
+    func delete(context: ModelContext?) {
+        guard let context = context else {
+            print("Error: ModelContext is nil. Cannot delete chapter.")
+            return
+        }
+        context.delete(self)
     }
 }
