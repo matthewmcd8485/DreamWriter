@@ -6,6 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7B93FE1E2D0548080058F09A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B93FE182D0548080058F09A /* Preview Assets.xcassets */; };
+		7B93FE1F2D0548080058F09A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B93FE1A2D0548080058F09A /* Assets.xcassets */; };
+		7B93FE202D0548080058F09A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE1B2D0548080058F09A /* HomeView.swift */; };
+		7B93FE212D0548080058F09A /* DreamWriterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE1C2D0548080058F09A /* DreamWriterApp.swift */; };
+		7B93FE232D0548880058F09A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B93FE222D0548880058F09A /* LaunchScreen.storyboard */; };
+		7B93FE252D0549210058F09A /* RoundedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B93FE242D0549210058F09A /* RoundedLogo.png */; };
+		7B93FE272D05496D0058F09A /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE262D05496D0058F09A /* AboutView.swift */; };
+		7B93FE292D054A510058F09A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE282D054A510058F09A /* BackgroundView.swift */; };
+		7B93FE2C2D054F450058F09A /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE2B2D054F450058F09A /* Story.swift */; };
+		7B93FE2E2D054F5E0058F09A /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE2D2D054F5E0058F09A /* Chapter.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		7B46FD302D0546CA008527EA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,14 +40,19 @@
 		7B46FD1F2D0546C9008527EA /* DreamWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B46FD2F2D0546CA008527EA /* DreamWriterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DreamWriterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B46FD392D0546CA008527EA /* DreamWriterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DreamWriterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B93FE182D0548080058F09A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7B93FE1A2D0548080058F09A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7B93FE1B2D0548080058F09A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7B93FE1C2D0548080058F09A /* DreamWriterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamWriterApp.swift; sourceTree = "<group>"; };
+		7B93FE222D0548880058F09A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7B93FE242D0549210058F09A /* RoundedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoundedLogo.png; sourceTree = "<group>"; };
+		7B93FE262D05496D0058F09A /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		7B93FE282D054A510058F09A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		7B93FE2B2D054F450058F09A /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		7B93FE2D2D054F5E0058F09A /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		7B46FD212D0546C9008527EA /* DreamWriter */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DreamWriter;
-			sourceTree = "<group>";
-		};
 		7B46FD322D0546CA008527EA /* DreamWriterTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DreamWriterTests;
@@ -75,7 +93,7 @@
 		7B46FD162D0546C9008527EA = {
 			isa = PBXGroup;
 			children = (
-				7B46FD212D0546C9008527EA /* DreamWriter */,
+				7B93FE1D2D0548080058F09A /* DreamWriter */,
 				7B46FD322D0546CA008527EA /* DreamWriterTests */,
 				7B46FD3C2D0546CA008527EA /* DreamWriterUITests */,
 				7B46FD202D0546C9008527EA /* Products */,
@@ -92,6 +110,39 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7B93FE192D0548080058F09A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7B93FE182D0548080058F09A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7B93FE1D2D0548080058F09A /* DreamWriter */ = {
+			isa = PBXGroup;
+			children = (
+				7B93FE1C2D0548080058F09A /* DreamWriterApp.swift */,
+				7B93FE1B2D0548080058F09A /* HomeView.swift */,
+				7B93FE262D05496D0058F09A /* AboutView.swift */,
+				7B93FE282D054A510058F09A /* BackgroundView.swift */,
+				7B93FE2A2D054F3B0058F09A /* Story Management */,
+				7B93FE1A2D0548080058F09A /* Assets.xcassets */,
+				7B93FE222D0548880058F09A /* LaunchScreen.storyboard */,
+				7B93FE242D0549210058F09A /* RoundedLogo.png */,
+				7B93FE192D0548080058F09A /* Preview Content */,
+			);
+			path = DreamWriter;
+			sourceTree = "<group>";
+		};
+		7B93FE2A2D054F3B0058F09A /* Story Management */ = {
+			isa = PBXGroup;
+			children = (
+				7B93FE2B2D054F450058F09A /* Story.swift */,
+				7B93FE2D2D054F5E0058F09A /* Chapter.swift */,
+			);
+			path = "Story Management";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +157,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				7B46FD212D0546C9008527EA /* DreamWriter */,
 			);
 			name = DreamWriter;
 			packageProductDependencies = (
@@ -212,6 +260,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B93FE252D0549210058F09A /* RoundedLogo.png in Resources */,
+				7B93FE232D0548880058F09A /* LaunchScreen.storyboard in Resources */,
+				7B93FE1E2D0548080058F09A /* Preview Assets.xcassets in Resources */,
+				7B93FE1F2D0548080058F09A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B93FE202D0548080058F09A /* HomeView.swift in Sources */,
+				7B93FE272D05496D0058F09A /* AboutView.swift in Sources */,
+				7B93FE292D054A510058F09A /* BackgroundView.swift in Sources */,
+				7B93FE2E2D054F5E0058F09A /* Chapter.swift in Sources */,
+				7B93FE212D0548080058F09A /* DreamWriterApp.swift in Sources */,
+				7B93FE2C2D054F450058F09A /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
