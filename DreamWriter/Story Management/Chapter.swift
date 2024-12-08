@@ -49,4 +49,23 @@ final class Chapter {
         self.image = imageData
         return true
     }
+    
+    /// Turns the `number` into text.
+    /// - Returns: A `String` equivalent of the chapter `number` value.
+    func chapterNumberText() -> String {
+        switch number {
+        case 1:
+            return "ONE"
+        case 2:
+            return "TWO"
+        case 3:
+            return "THREE"
+        case 4:
+            return "FOUR"
+        case 5:
+            return "FIVE"
+        default:
+            return ""
+        }
+    }
 }

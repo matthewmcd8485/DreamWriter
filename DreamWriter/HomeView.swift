@@ -8,10 +8,63 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var isShowingAbout = false
+    
     var body: some View {
-        NavigationSplitView {
-            
+        NavigationStack {
+            ZStack {
+                BackgroundView(uiColor: UIColor(named: "darkerNavy") ?? .black)
+                VStack(spacing: 30) {
+                    
+                    HStack {
+                        Image("TextLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200)
+                        
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Text("Select a mode to get started.")
+                            .font(.system(size: 16, weight: .light))
+                            .foregroundStyle(.white)
+                        
+                        Spacer()
+                    }
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: PromptInputView()) {
+                        ModeSelectionButton(symbolName: "brain", title: "Create a New Story", subtitle: "Use generative AI models to write and illustrate a story about any topic you'd like.")
+                    }
+                    
+                    NavigationLink(destination: BrowseStoriesView()) {
+                        ModeSelectionButton(symbolName: "books.vertical", title: "Personal Library", subtitle: "Take a look through all the stories you've made in the past.")
+                    }
+                    
+                    Spacer()
+                    Spacer()
+                    
+                    Button {
+                        isShowingAbout = true
+                    } label: {
+                        Label("About", systemImage: "info.circle")
+                    }
+                }
+                .padding()
+                .sheet(isPresented: $isShowingAbout) {
+                    AboutView()
+                }
+            }
         }
+    }
+}
+
+struct BrowseStoriesView: View {
+    var body: some View {
+        Text("Browse Stories View")
+            .navigationTitle("Previous Stories")
     }
 }
 

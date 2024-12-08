@@ -17,6 +17,9 @@
 		7B93FE292D054A510058F09A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE282D054A510058F09A /* BackgroundView.swift */; };
 		7B93FE2C2D054F450058F09A /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE2B2D054F450058F09A /* Story.swift */; };
 		7B93FE2E2D054F5E0058F09A /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE2D2D054F5E0058F09A /* Chapter.swift */; };
+		7B93FE302D0559450058F09A /* ModeSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE2F2D0559450058F09A /* ModeSelectionButton.swift */; };
+		7B93FE322D0559720058F09A /* PromptInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE312D0559720058F09A /* PromptInputView.swift */; };
+		7B93FE352D056A3A0058F09A /* SwiftOpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 7B93FE342D056A3A0058F09A /* SwiftOpenAI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,8 @@
 		7B93FE282D054A510058F09A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		7B93FE2B2D054F450058F09A /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		7B93FE2D2D054F5E0058F09A /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		7B93FE2F2D0559450058F09A /* ModeSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionButton.swift; sourceTree = "<group>"; };
+		7B93FE312D0559720058F09A /* PromptInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -70,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B93FE352D056A3A0058F09A /* SwiftOpenAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +129,8 @@
 			children = (
 				7B93FE1C2D0548080058F09A /* DreamWriterApp.swift */,
 				7B93FE1B2D0548080058F09A /* HomeView.swift */,
+				7B93FE2F2D0559450058F09A /* ModeSelectionButton.swift */,
+				7B93FE312D0559720058F09A /* PromptInputView.swift */,
 				7B93FE262D05496D0058F09A /* AboutView.swift */,
 				7B93FE282D054A510058F09A /* BackgroundView.swift */,
 				7B93FE2A2D054F3B0058F09A /* Story Management */,
@@ -160,6 +168,7 @@
 			);
 			name = DreamWriter;
 			packageProductDependencies = (
+				7B93FE342D056A3A0058F09A /* SwiftOpenAI */,
 			);
 			productName = DreamWriter;
 			productReference = 7B46FD1F2D0546C9008527EA /* DreamWriter.app */;
@@ -243,6 +252,9 @@
 			);
 			mainGroup = 7B46FD162D0546C9008527EA;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7B93FE332D056A3A0058F09A /* XCRemoteSwiftPackageReference "SwiftOpenAI" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7B46FD202D0546C9008527EA /* Products */;
 			projectDirPath = "";
@@ -289,9 +301,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B93FE202D0548080058F09A /* HomeView.swift in Sources */,
+				7B93FE302D0559450058F09A /* ModeSelectionButton.swift in Sources */,
 				7B93FE272D05496D0058F09A /* AboutView.swift in Sources */,
 				7B93FE292D054A510058F09A /* BackgroundView.swift in Sources */,
 				7B93FE2E2D054F5E0058F09A /* Chapter.swift in Sources */,
+				7B93FE322D0559720058F09A /* PromptInputView.swift in Sources */,
 				7B93FE212D0548080058F09A /* DreamWriterApp.swift in Sources */,
 				7B93FE2C2D054F450058F09A /* Story.swift in Sources */,
 			);
@@ -616,6 +630,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7B93FE332D056A3A0058F09A /* XCRemoteSwiftPackageReference "SwiftOpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftBeta/SwiftOpenAI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7B93FE342D056A3A0058F09A /* SwiftOpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B93FE332D056A3A0058F09A /* XCRemoteSwiftPackageReference "SwiftOpenAI" */;
+			productName = SwiftOpenAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7B46FD172D0546C9008527EA /* Project object */;
 }
