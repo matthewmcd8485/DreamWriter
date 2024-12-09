@@ -22,6 +22,7 @@ struct ChapterListItemView: View {
                     
                     Text(chapter.title)
                         .font(.system(size: 24, weight: .bold, design: .rounded))
+                        .multilineTextAlignment(.leading)
                         .foregroundStyle(.nearWhite)
                     
                     if chapter.isCreated {

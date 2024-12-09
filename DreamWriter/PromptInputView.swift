@@ -6,14 +6,20 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PromptInputView: View {
+    @Environment(\.modelContext) private var modelContext
+    
     @State private var storyIdea = ""
-    @State private var numberOfChapters = 1
+    @State private var numberOfChapters = 3
     @State private var currentPromptIndex = 0
     @FocusState private var isTextEditorFocused: Bool
     @State private var textEditorHeight: CGFloat = 400
     @State private var showChapterSelection = false
+    @State private var createdStory: Story? = nil
+    @State private var navigationPath = NavigationPath()
+    @State private var isLoading = false
 
     private let prompts = [
         "a dragon who loves baking cakes",
@@ -29,145 +35,211 @@ struct PromptInputView: View {
     ]
 
     var body: some View {
-        ZStack {
-            BackgroundView(color: .darkerNavy)
-                .onTapGesture {
-                    isTextEditorFocused = false // Dismiss keyboard on tap outside
-                }
+        NavigationStack(path: $navigationPath) {
+            ZStack {
+                BackgroundView(color: .darkerNavy)
+                    .onTapGesture {
+                        isTextEditorFocused = false // Dismiss keyboard on tap outside
+                    }
 
-            VStack {
-                
-                HStack {
-                    Text("NEW STORY")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-                        .foregroundStyle(.mediumBlue)
-                    
+                VStack {
+                    headerView
+                    chapterSelectionView
+                    textEditorView
                     Spacer()
+                    createButton
                 }
-                
-                // Header Section
-                VStack(spacing: 8) {
-                    HStack {
-                        Text("Write me a")
-                            .font(.system(size: 20, weight: .medium, design: .rounded))
-                            .foregroundColor(.white)
-
-                        Button(action: {
-                            withAnimation {
-                                showChapterSelection.toggle()
-                            }
-                        }) {
-                            Text("\(numberOfChapters)")
-                                .font(.system(size: 20, weight: .bold, design: .rounded))
-                                .foregroundColor(.darkPurple)
-                                .padding(8)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .fill(Color.lightNavy)
-                                )
-                        }
-
-                        Text("chapter story about")
-                            .font(.system(size: 20, weight: .medium, design: .rounded))
-                            .foregroundColor(.white)
-                        
-                        Spacer()
-                    }
-
-                    // HStack for chapter selection
-                    if showChapterSelection {
-                        HStack(spacing: 8) {
-                            ForEach(1...5, id: \.self) { number in
-                                Button(action: {
-                                    withAnimation {
-                                        numberOfChapters = number
-                                    }
-                                    generateHaptic()
-                                }) {
-                                    Text("\(number)")
-                                        .font(.system(size: 20, weight: .bold))
-                                        .foregroundColor(numberOfChapters == number ? .darkPurple : .white)
-                                        .frame(width: 44, height: 44)
-                                        .background(
-                                            Circle()
-                                                .fill(numberOfChapters == number ? .lightNavy : Color.clear)
-                                        )
-                                }
-                            }
-
-                            // Checkmark Button
-                            Button(action: {
-                                withAnimation {
-                                    showChapterSelection = false
-                                }
-                                generateHaptic()
-                            }) {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .font(.system(size: 30, weight: .bold))
-                                    .symbolRenderingMode(.hierarchical)
-                                    .foregroundStyle(.white)
-                            }
-                        }
-                        .transition(.move(edge: .top).combined(with: .opacity))
-                    }
-                }
-                .padding(.bottom)
-
-                // TextEditor with dynamic text size and height monitoring
-                GeometryReader { geometry in
-                    TextEditor(text: $storyIdea)
-                        .font(.system(size: dynamicFontSize(for: storyIdea)))
-                        .foregroundStyle(.white)
-                        .frame(height: textEditorHeight)
-                        .scrollContentBackground(.hidden)
-                        .overlay(
-                            Group {
-                                if storyIdea.isEmpty {
-                                    Text(prompts[currentPromptIndex])
-                                        .font(.system(size: 60))
-                                        .foregroundColor(.gray)
-                                        .animation(.easeInOut(duration: 0.5), value: currentPromptIndex)
-                                }
-                            },
-                            alignment: .topLeading
-                        )
-                        .focused($isTextEditorFocused) // Track focus
-                        .onChange(of: geometry.size.height) { _, newHeight in
-                            textEditorHeight = newHeight
-                        }
-                        .onTapGesture {
-                            isTextEditorFocused = true // Focus on tap
-                        }
-                }
-                .frame(height: textEditorHeight)
-
-                Spacer()
-
-                Button {
-                    // Action for Create
-                } label: {
-                    Text("Create")
-                        .font(.system(size: 20, weight: .medium))
-                        .frame(width: 250, height: 30)
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(.darkPurple)
-                .padding(.bottom)
+                .padding()
             }
-            .padding()
+            .navigationTitle("")
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            .toolbarBackground(Color.darkerNavy, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .edgesIgnoringSafeArea(.bottom)
+            .navigationDestination(for: Story.self) { story in
+                StoryView(story: story) // Navigate to StoryView with the story
+            }
         }
         .onAppear(perform: startPlaceholderRotation)
-        .navigationTitle("")
-        .toolbarColorScheme(.dark, for: .navigationBar)
-        .edgesIgnoringSafeArea(.bottom)
+    }
+}
+
+extension PromptInputView {
+    // Header View
+    private var headerView: some View {
+        HStack {
+            Text("NEW STORY")
+                .font(.system(size: 20, weight: .bold, design: .rounded))
+                .foregroundStyle(.mediumBlue)
+            Spacer()
+        }
     }
 
-    // Function to dynamically adjust font size
+    // Chapter Selection View
+    private var chapterSelectionView: some View {
+        VStack(spacing: 8) {
+            HStack {
+                Text("Write me a")
+                    .font(.system(size: 20, weight: .medium, design: .rounded))
+                    .foregroundColor(.white)
+
+                Button(action: {
+                    withAnimation {
+                        showChapterSelection.toggle()
+                    }
+                }) {
+                    Text("\(numberOfChapters)")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                        .foregroundColor(.darkPurple)
+                        .padding(8)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightNavy)
+                        )
+                }
+
+                Text("chapter story about")
+                    .font(.system(size: 20, weight: .medium, design: .rounded))
+                    .foregroundColor(.white)
+
+                Spacer()
+            }
+
+            if showChapterSelection {
+                chapterPicker
+            }
+        }
+        .padding(.bottom)
+    }
+
+    // Chapter Picker
+    private var chapterPicker: some View {
+        HStack(spacing: 8) {
+            ForEach(1...5, id: \.self) { number in
+                Button(action: {
+                    withAnimation {
+                        numberOfChapters = number
+                    }
+                    generateHaptic()
+                }) {
+                    Text("\(number)")
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(numberOfChapters == number ? .darkPurple : .white)
+                        .frame(width: 44, height: 44)
+                        .background(
+                            Circle()
+                                .fill(numberOfChapters == number ? .lightNavy : Color.clear)
+                        )
+                }
+            }
+
+            Button(action: {
+                withAnimation {
+                    showChapterSelection = false
+                }
+                generateHaptic()
+            }) {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.system(size: 30, weight: .bold))
+                    .symbolRenderingMode(.hierarchical)
+                    .foregroundStyle(.white)
+            }
+        }
+        .transition(.move(edge: .top).combined(with: .opacity))
+    }
+
+    // Text Editor View
+    private var textEditorView: some View {
+        GeometryReader { geometry in
+            TextEditor(text: $storyIdea)
+                .font(.system(size: dynamicFontSize(for: storyIdea)))
+                .foregroundStyle(.white)
+                .frame(height: textEditorHeight)
+                .scrollContentBackground(.hidden)
+                .overlay(
+                    Group {
+                        if storyIdea.isEmpty {
+                            Text(prompts[currentPromptIndex])
+                                .font(.system(size: 60))
+                                .foregroundColor(.gray)
+                                .animation(.easeInOut(duration: 0.5), value: currentPromptIndex)
+                        }
+                    },
+                    alignment: .topLeading
+                )
+                .focused($isTextEditorFocused)
+                .onChange(of: geometry.size.height) { _, newHeight in
+                    textEditorHeight = newHeight
+                }
+                .onTapGesture {
+                    isTextEditorFocused = true
+                }
+        }
+        .frame(height: textEditorHeight)
+    }
+
+    // Create Button
+    private var createButton: some View {
+        Button {
+            if storyIdea != "" {
+                createStory()
+            }
+        } label: {
+            HStack(spacing: 0) {
+                Spacer()
+                
+                if isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .tint(.white)
+                }
+                
+                Text("Create")
+                    .font(.system(size: 20, weight: .medium))
+                    .frame(width: 250, height: 30)
+                
+                Spacer()
+            }
+        }
+        .buttonStyle(.borderedProminent)
+        .tint(.darkPurple)
+        .padding()
+    }
+}
+
+// MARK: - Helper Methods
+extension PromptInputView {
+    private func createStory() {
+        isLoading = true
+
+        OpenAIAPIManager.shared.fetchStoryAndChapters(prompt: storyIdea, numberOfChapters: numberOfChapters) { result in
+            DispatchQueue.main.async {
+                self.isLoading = false
+                switch result {
+                case .success(let story):
+                    self.createdStory = story
+                    if let createdStory = createdStory {
+                        print("Story created: \(createdStory.title)")
+                        
+                        // Save the story to the SwiftData model
+                        createdStory.saveWithChapters(context: modelContext)
+                        
+                        // Navigate to the StoryView
+                        navigationPath.append(createdStory)
+                    }
+                case .failure(let error):
+                    print("Failed to create story: \(error.localizedDescription)")
+                    // Handle the error (e.g., show an alert)
+                }
+            }
+        }
+    }
+
     private func dynamicFontSize(for text: String) -> CGFloat {
         let maxFontSize: CGFloat = 60
         let minFontSize: CGFloat = 20
         let maxCharactersBeforeReduction: Int = Int(textEditorHeight / 10)
-        
+
         if text.count > maxCharactersBeforeReduction {
             return max(minFontSize, maxFontSize - CGFloat(text.count - maxCharactersBeforeReduction) / 2)
         }
@@ -175,7 +247,6 @@ struct PromptInputView: View {
         return maxFontSize
     }
 
-    // Function to start the placeholder rotation
     private func startPlaceholderRotation() {
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { _ in
             var nextIndex: Int
@@ -185,8 +256,7 @@ struct PromptInputView: View {
             currentPromptIndex = nextIndex
         }
     }
-    
-    // Function to generate haptic feedback
+
     private func generateHaptic() {
         let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
         impactFeedback.prepare()
@@ -196,9 +266,4 @@ struct PromptInputView: View {
 
 #Preview {
     PromptInputView()
-}
-
-#Preview {
-    PromptInputView()
-    //HomeView()
 }

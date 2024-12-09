@@ -25,6 +25,9 @@
 		7B93FE3B2D05700C0058F09A /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE3A2D05700C0058F09A /* ChapterView.swift */; };
 		7B93FE3D2D057C2D0058F09A /* LibraryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE3C2D057C2D0058F09A /* LibraryListItemView.swift */; };
 		7B93FE3F2D057C580058F09A /* ChapterListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE3E2D057C580058F09A /* ChapterListItemView.swift */; };
+		7B93FE552D0792690058F09A /* OpenAIAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE542D0792690058F09A /* OpenAIAPIManager.swift */; };
+		7B93FE572D0792920058F09A /* OpenAIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE562D0792920058F09A /* OpenAIResponse.swift */; };
+		7B93FE592D07AA5A0058F09A /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE582D07AA5A0058F09A /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		7B93FE3A2D05700C0058F09A /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
 		7B93FE3C2D057C2D0058F09A /* LibraryListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryListItemView.swift; sourceTree = "<group>"; };
 		7B93FE3E2D057C580058F09A /* ChapterListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterListItemView.swift; sourceTree = "<group>"; };
+		7B93FE542D0792690058F09A /* OpenAIAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIAPIManager.swift; sourceTree = "<group>"; };
+		7B93FE562D0792920058F09A /* OpenAIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIResponse.swift; sourceTree = "<group>"; };
+		7B93FE582D07AA5A0058F09A /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -160,8 +166,11 @@
 		7B93FE2A2D054F3B0058F09A /* Story Management */ = {
 			isa = PBXGroup;
 			children = (
+				7B93FE542D0792690058F09A /* OpenAIAPIManager.swift */,
+				7B93FE562D0792920058F09A /* OpenAIResponse.swift */,
 				7B93FE2B2D054F450058F09A /* Story.swift */,
 				7B93FE2D2D054F5E0058F09A /* Chapter.swift */,
+				7B93FE582D07AA5A0058F09A /* APIKey.swift */,
 			);
 			path = "Story Management";
 			sourceTree = "<group>";
@@ -315,14 +324,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B93FE572D0792920058F09A /* OpenAIResponse.swift in Sources */,
 				7B93FE202D0548080058F09A /* HomeView.swift in Sources */,
 				7B93FE302D0559450058F09A /* ModeSelectionButton.swift in Sources */,
 				7B93FE272D05496D0058F09A /* AboutView.swift in Sources */,
 				7B93FE292D054A510058F09A /* BackgroundView.swift in Sources */,
 				7B93FE372D056E580058F09A /* LibraryView.swift in Sources */,
 				7B93FE2E2D054F5E0058F09A /* Chapter.swift in Sources */,
+				7B93FE552D0792690058F09A /* OpenAIAPIManager.swift in Sources */,
 				7B93FE3B2D05700C0058F09A /* ChapterView.swift in Sources */,
 				7B93FE322D0559720058F09A /* PromptInputView.swift in Sources */,
+				7B93FE592D07AA5A0058F09A /* APIKey.swift in Sources */,
 				7B93FE212D0548080058F09A /* DreamWriterApp.swift in Sources */,
 				7B93FE392D056FA90058F09A /* StoryView.swift in Sources */,
 				7B93FE2C2D054F450058F09A /* Story.swift in Sources */,

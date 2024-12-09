@@ -44,6 +44,9 @@ struct LibraryView: View {
         }
         .navigationTitle("Library")
         .navigationBarTitleDisplayMode(.large)
+        .onAppear {
+            print("Stories count: \(stories.count)") // Debug: Check if stories are being queried
+        }
         
     }
     

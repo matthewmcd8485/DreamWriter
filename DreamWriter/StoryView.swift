@@ -29,7 +29,7 @@ struct StoryView: View {
                     
                     Spacer()
                 }
-                .padding(.bottom, 50)
+                .padding(.bottom)
                 
                 HStack {
                     Label("INITIAL PROMPT", systemImage: "brain")
@@ -48,7 +48,7 @@ struct StoryView: View {
                     
                     Spacer()
                 }
-                .padding(.bottom, 50)
+                .padding(.bottom)
                 
                 
                 if story.chapters.isEmpty {
@@ -143,6 +143,6 @@ struct StoryView: View {
         Chapter(number: 1, title: "Chapter 1", text: "This is chapter one.", isCreated: true),
         Chapter(number: 2, title: "Chapter 2", text: "This is chapter two.", isCreated: false)
     ]
-    let mockStory = Story(title: "Mock Story", chapters: mockChapters, prompt: "Test prompt for the test application", isCompleted: false)
+    let mockStory = Story(title: "Mock Story", chapters: mockChapters, prompt: "Test prompt for the test application", isCompleted: true)
     StoryView(story: mockStory)
 }

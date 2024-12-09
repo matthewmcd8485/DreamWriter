@@ -18,7 +18,9 @@ struct LibraryListItemView: View {
                 VStack(alignment: .leading) {
                     Text(story.title)
                         .font(.system(size: 24, weight: .bold, design: .rounded))
+                        .multilineTextAlignment(.leading)
                         .foregroundStyle(.nearWhite)
+                    
                     Text("\(story.chapters.count) chapters")
                         .font(.system(size: 16, weight: .light))
                         .foregroundStyle(.nearWhite)
