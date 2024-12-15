@@ -55,23 +55,22 @@ struct StoryView: View {
                     placeholderView
                 } else {
                     ScrollView {
-                        ForEach(story.chapters.sorted(by: { $0.number < $1.number })) { chapter in
-                            if story.isCompleted || canOpenChapter(chapter: chapter) {
+                        ForEach(story.chapters.sorted(by: { $0.number < $1.number }), id: \.id) { chapter in
+                            if canOpenChapter(chapter: chapter) {
                                 NavigationLink(destination: ChapterView(chapter: chapter, story: story)) {
                                     ChapterListItemView(chapter: chapter)
                                 }
                             } else {
-                                Text(chapter.title)
-                                    .foregroundColor(.gray)
+                                // Still list the chapter, but tapping it doesn't do anything.
+                                ChapterListItemView(chapter: chapter)
                             }
-                            
                         }
                     }
                     
                 }
             }
             .padding()
-            .navigationTitle("")
+            .navigationTitle("Story")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 // Add the trashcan button
@@ -124,10 +123,8 @@ struct StoryView: View {
     
     /// Determines if a chapter can be opened based on its order in the story.
     private func canOpenChapter(chapter: Chapter) -> Bool {
-        guard let currentIndex = story.chapters.firstIndex(where: { $0.id == chapter.id }) else {
-            return false
-        }
-        return currentIndex == 0 || story.chapters[currentIndex - 1].isCreated
+        let openable = chapter.status != .notDeveloped
+        return openable
     }
     
     /// Deletes the story from the model context and dismisses the view.
@@ -138,11 +135,14 @@ struct StoryView: View {
 }
 
 #Preview {
-    // Example preview using mock data
-    let mockChapters = [
-        Chapter(number: 1, title: "Chapter 1", text: "This is chapter one.", isCreated: true),
-        Chapter(number: 2, title: "Chapter 2", text: "This is chapter two.", isCreated: false)
-    ]
-    let mockStory = Story(title: "Mock Story", chapters: mockChapters, prompt: "Test prompt for the test application", isCompleted: true)
+    let mockChapters = (1...5).map { number in
+        Chapter(
+            number: number,
+            title: "Chapter \(number)",
+            text: "This is chapter \(number).",
+            status: number % 3 == 0 ? .full : .partial // Every 3rd chapter is not openable
+        )
+    }
+    let mockStory = Story(title: "Mock Story", chapters: mockChapters, prompt: "Test prompt for the test application", status: .partial)
     StoryView(story: mockStory)
 }

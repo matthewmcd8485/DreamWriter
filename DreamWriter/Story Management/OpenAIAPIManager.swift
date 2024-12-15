@@ -6,12 +6,18 @@
 //
 
 import Foundation
+import UIKit
+import AVFoundation
+import SwiftOpenAI
+
 
 final class OpenAIAPIManager {
     static let shared = OpenAIAPIManager()
     
     private let baseURL = "https://api.openai.com/v1/chat/completions"
     private let apiKey = APIKey.openAIAPIKey
+    
+    var openAI = SwiftOpenAI(apiKey: APIKey.openAIAPIKey)
 
     private init() {}
     
@@ -122,7 +128,7 @@ final class OpenAIAPIManager {
                 number: chapterResponse.chapterNumber,
                 title: chapterResponse.chapterTitle,
                 text: chapterResponse.chapterContent,
-                isCreated: true
+                status: .partial
             )
         }
 
@@ -130,7 +136,7 @@ final class OpenAIAPIManager {
             title: response.storyTitle,
             chapters: chapters,
             prompt: prompt,
-            isCompleted: true
+            status: .partial
         )
         print("Parsed Story: \(story.title)")
         return story
@@ -139,5 +145,105 @@ final class OpenAIAPIManager {
     enum APIError: Error {
         case invalidURL
         case invalidResponse
+    }
+}
+
+// MARK: - Dall•E Implementation
+extension OpenAIAPIManager {
+    func createImage(for chapter: Chapter, storyTitle: String, numChapters: Int, completion: @escaping (Result<Data, Error>) -> Void) {
+        let imageURL = "https://api.openai.com/v1/images/generations"
+        
+        guard let url = URL(string: imageURL) else {
+            print("Error: Invalid DALLE URL")
+            completion(.failure(APIError.invalidURL))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // Combine story prompt and chapter content to generate an image description
+        let imagePrompt = """
+        Create an artistic illustration for a story titled '\(storyTitle)'. We are currently looking at chapter \(chapter.number) of \(numChapters).
+        The chapter is titled '\(chapter.title)', and its content describes: "\(chapter.text ?? "")".
+        """
+
+        let body: [String: Any] = [
+            "prompt": imagePrompt,
+            "n": 1, // Number of images to generate
+            "size": "1024x1024"
+        ]
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: body)
+        } catch {
+            print("Error: Failed to serialize request body - \(error.localizedDescription)")
+            completion(.failure(error))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Network Error: \(error.localizedDescription)")
+                completion(.failure(error))
+                return
+            }
+
+            guard let data = data else {
+                print("Error: No data received from API")
+                completion(.failure(APIError.invalidResponse))
+                return
+            }
+            
+            do {
+                // Decode the response to extract the image URL
+                let response = try JSONDecoder().decode(DALLEImageResponse.self, from: data)
+                guard let imageURLString = response.data.first?.url,
+                      let imageURL = URL(string: imageURLString) else {
+                    print("Error: Failed to extract image URL from response")
+                    completion(.failure(APIError.invalidResponse))
+                    return
+                }
+                
+                // Fetch the image data from the URL
+                let imageData = try Data(contentsOf: imageURL)
+                completion(.success(imageData))
+            } catch {
+                print("Error: \(error.localizedDescription)")
+                completion(.failure(error))
+            }
+        }
+        task.resume()
+    }
+}
+
+// MARK: - Speech Synthesis
+extension OpenAIAPIManager {
+    func convertToSpeech(for chapter: Chapter) async throws -> Data {
+        
+        let textToConvert = """
+        Chapter \(chapter.chapterNumberText()): \(chapter.title).
+        \(chapter.text ?? "No content available.")
+        """
+        
+        let selectedVoice = DALLEVoices.getDefaultVoice()
+        
+        do {
+            if let data = try await openAI.createSpeech(
+                model: .tts(.tts1),
+                input: textToConvert,
+                voice: selectedVoice.getAPIVoice(),
+                responseFormat: .mp3,
+                speed: 1.0
+            ) {
+                return data
+            } else {
+                throw NSError(domain: "OpenAIAPIManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Failed to generate speech data."])
+            }
+        } catch {
+            throw error
+        }
     }
 }

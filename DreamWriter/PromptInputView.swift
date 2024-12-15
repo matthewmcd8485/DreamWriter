@@ -181,7 +181,7 @@ extension PromptInputView {
     // Create Button
     private var createButton: some View {
         Button {
-            if storyIdea != "" {
+            if storyIdea != "" && !isLoading {
                 createStory()
             }
         } label: {
@@ -203,6 +203,7 @@ extension PromptInputView {
         }
         .buttonStyle(.borderedProminent)
         .tint(.darkPurple)
+        .frame(width: 200)
         .padding()
     }
 }
@@ -220,6 +221,8 @@ extension PromptInputView {
                     self.createdStory = story
                     if let createdStory = createdStory {
                         print("Story created: \(createdStory.title)")
+                        
+                        createdStory.status = .partial
                         
                         // Save the story to the SwiftData model
                         createdStory.saveWithChapters(context: modelContext)

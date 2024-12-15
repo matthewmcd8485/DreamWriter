@@ -26,14 +26,7 @@ struct LibraryListItemView: View {
                         .foregroundStyle(.nearWhite)
                         .padding(.bottom, 2)
                     
-                    if story.isCompleted {
-                        Label("Fully developed", systemImage: "checkmark.circle")
-                            .foregroundStyle(.green)
-                    } else {
-                        Label("Not finished yet", systemImage: "xmark.circle")
-                            .foregroundStyle(.red)
-                    }
-                    
+                    StatusView(state: story.status)
                     
                 }
                 

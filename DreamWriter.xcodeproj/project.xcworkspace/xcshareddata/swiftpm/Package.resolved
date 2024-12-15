@@ -1,5 +1,5 @@
 {
-  "originHash" : "630851788b6ed690646e26def2c8233c614d0c899d7df1639b697a15a28193b4",
+  "originHash" : "2be1d210f6d195712d10262381e53e98ee6abb878287a027735e735873a0ea3a",
   "pins" : [
     {
       "identity" : "swiftopenai",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "b316788cf0e6584cc730d8231112dd2c76458713",
         "version" : "1.9.0"
+      }
+    },
+    {
+      "identity" : "swiftui-image-viewer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fuzzzlove/swiftui-image-viewer.git",
+      "state" : {
+        "revision" : "ca77123064ae046eac2be01654ee756085c2b182",
+        "version" : "1.0.0"
       }
     }
   ],

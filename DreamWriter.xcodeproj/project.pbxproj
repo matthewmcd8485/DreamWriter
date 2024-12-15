@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B78C2432D093A6000D1BADF /* ChapterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B78C2422D093A6000D1BADF /* ChapterStore.swift */; };
+		7B78C2452D093DAB00D1BADF /* DALLEImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B78C2442D093DAB00D1BADF /* DALLEImageResponse.swift */; };
+		7B78C24F2D09466500D1BADF /* DALLEVoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B78C24E2D09466500D1BADF /* DALLEVoices.swift */; };
+		7B78C2F42D094A6A00D1BADF /* SwiftUIImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = 7B78C2F32D094A6A00D1BADF /* SwiftUIImageViewer */; };
+		7B78C2FC2D0952B500D1BADF /* nova.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7B78C2F92D0952B500D1BADF /* nova.wav */; };
+		7B78C2FD2D0952B500D1BADF /* onyx.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7B78C2FA2D0952B500D1BADF /* onyx.wav */; };
+		7B78C2FE2D0952B500D1BADF /* shimmer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7B78C2FB2D0952B500D1BADF /* shimmer.wav */; };
+		7B78C2FF2D0952B500D1BADF /* alloy.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7B78C2F62D0952B500D1BADF /* alloy.wav */; };
+		7B78C3002D0952B500D1BADF /* fable.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7B78C2F82D0952B500D1BADF /* fable.wav */; };
+		7B78C3012D0952B500D1BADF /* echo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7B78C2F72D0952B500D1BADF /* echo.wav */; };
 		7B93FE1E2D0548080058F09A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B93FE182D0548080058F09A /* Preview Assets.xcassets */; };
 		7B93FE1F2D0548080058F09A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B93FE1A2D0548080058F09A /* Assets.xcassets */; };
 		7B93FE202D0548080058F09A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE1B2D0548080058F09A /* HomeView.swift */; };
@@ -28,6 +38,9 @@
 		7B93FE552D0792690058F09A /* OpenAIAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE542D0792690058F09A /* OpenAIAPIManager.swift */; };
 		7B93FE572D0792920058F09A /* OpenAIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE562D0792920058F09A /* OpenAIResponse.swift */; };
 		7B93FE592D07AA5A0058F09A /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE582D07AA5A0058F09A /* APIKey.swift */; };
+		7BB6AE372D0CE318008EB2F2 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6AE362D0CE318008EB2F2 /* Array.swift */; };
+		7BB6AE392D0CE63E008EB2F2 /* StoryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6AE382D0CE63E008EB2F2 /* StoryState.swift */; };
+		7BB6AE3B2D0CE6A2008EB2F2 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6AE3A2D0CE6A2008EB2F2 /* StatusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +64,15 @@
 		7B46FD1F2D0546C9008527EA /* DreamWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B46FD2F2D0546CA008527EA /* DreamWriterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DreamWriterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B46FD392D0546CA008527EA /* DreamWriterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DreamWriterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B78C2422D093A6000D1BADF /* ChapterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterStore.swift; sourceTree = "<group>"; };
+		7B78C2442D093DAB00D1BADF /* DALLEImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DALLEImageResponse.swift; sourceTree = "<group>"; };
+		7B78C24E2D09466500D1BADF /* DALLEVoices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DALLEVoices.swift; sourceTree = "<group>"; };
+		7B78C2F62D0952B500D1BADF /* alloy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alloy.wav; sourceTree = "<group>"; };
+		7B78C2F72D0952B500D1BADF /* echo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = echo.wav; sourceTree = "<group>"; };
+		7B78C2F82D0952B500D1BADF /* fable.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fable.wav; sourceTree = "<group>"; };
+		7B78C2F92D0952B500D1BADF /* nova.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = nova.wav; sourceTree = "<group>"; };
+		7B78C2FA2D0952B500D1BADF /* onyx.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = onyx.wav; sourceTree = "<group>"; };
+		7B78C2FB2D0952B500D1BADF /* shimmer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shimmer.wav; sourceTree = "<group>"; };
 		7B93FE182D0548080058F09A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7B93FE1A2D0548080058F09A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B93FE1B2D0548080058F09A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -71,6 +93,9 @@
 		7B93FE542D0792690058F09A /* OpenAIAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIAPIManager.swift; sourceTree = "<group>"; };
 		7B93FE562D0792920058F09A /* OpenAIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIResponse.swift; sourceTree = "<group>"; };
 		7B93FE582D07AA5A0058F09A /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		7BB6AE362D0CE318008EB2F2 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		7BB6AE382D0CE63E008EB2F2 /* StoryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryState.swift; sourceTree = "<group>"; };
+		7BB6AE3A2D0CE6A2008EB2F2 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -91,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B78C2F42D094A6A00D1BADF /* SwiftUIImageViewer in Frameworks */,
 				7B93FE352D056A3A0058F09A /* SwiftOpenAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +158,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7B78C2F52D0952AA00D1BADF /* Audio Samples */ = {
+			isa = PBXGroup;
+			children = (
+				7B78C2F62D0952B500D1BADF /* alloy.wav */,
+				7B78C2F72D0952B500D1BADF /* echo.wav */,
+				7B78C2F82D0952B500D1BADF /* fable.wav */,
+				7B78C2F92D0952B500D1BADF /* nova.wav */,
+				7B78C2FA2D0952B500D1BADF /* onyx.wav */,
+				7B78C2FB2D0952B500D1BADF /* shimmer.wav */,
+			);
+			path = "Audio Samples";
+			sourceTree = "<group>";
+		};
 		7B93FE192D0548080058F09A /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,10 +193,12 @@
 				7B93FE382D056FA90058F09A /* StoryView.swift */,
 				7B93FE3A2D05700C0058F09A /* ChapterView.swift */,
 				7B93FE282D054A510058F09A /* BackgroundView.swift */,
+				7BB6AE3A2D0CE6A2008EB2F2 /* StatusView.swift */,
 				7B93FE2A2D054F3B0058F09A /* Story Management */,
 				7B93FE1A2D0548080058F09A /* Assets.xcassets */,
 				7B93FE222D0548880058F09A /* LaunchScreen.storyboard */,
 				7B93FE242D0549210058F09A /* RoundedLogo.png */,
+				7B78C2F52D0952AA00D1BADF /* Audio Samples */,
 				7B93FE192D0548080058F09A /* Preview Content */,
 			);
 			path = DreamWriter;
@@ -167,10 +208,15 @@
 			isa = PBXGroup;
 			children = (
 				7B93FE542D0792690058F09A /* OpenAIAPIManager.swift */,
+				7B78C2442D093DAB00D1BADF /* DALLEImageResponse.swift */,
+				7B78C24E2D09466500D1BADF /* DALLEVoices.swift */,
 				7B93FE562D0792920058F09A /* OpenAIResponse.swift */,
 				7B93FE2B2D054F450058F09A /* Story.swift */,
 				7B93FE2D2D054F5E0058F09A /* Chapter.swift */,
+				7B78C2422D093A6000D1BADF /* ChapterStore.swift */,
 				7B93FE582D07AA5A0058F09A /* APIKey.swift */,
+				7BB6AE362D0CE318008EB2F2 /* Array.swift */,
+				7BB6AE382D0CE63E008EB2F2 /* StoryState.swift */,
 			);
 			path = "Story Management";
 			sourceTree = "<group>";
@@ -193,6 +239,7 @@
 			name = DreamWriter;
 			packageProductDependencies = (
 				7B93FE342D056A3A0058F09A /* SwiftOpenAI */,
+				7B78C2F32D094A6A00D1BADF /* SwiftUIImageViewer */,
 			);
 			productName = DreamWriter;
 			productReference = 7B46FD1F2D0546C9008527EA /* DreamWriter.app */;
@@ -278,6 +325,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				7B93FE332D056A3A0058F09A /* XCRemoteSwiftPackageReference "SwiftOpenAI" */,
+				7B78C2F22D094A6A00D1BADF /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7B46FD202D0546C9008527EA /* Products */;
@@ -300,6 +348,12 @@
 				7B93FE232D0548880058F09A /* LaunchScreen.storyboard in Resources */,
 				7B93FE1E2D0548080058F09A /* Preview Assets.xcassets in Resources */,
 				7B93FE1F2D0548080058F09A /* Assets.xcassets in Resources */,
+				7B78C2FC2D0952B500D1BADF /* nova.wav in Resources */,
+				7B78C2FD2D0952B500D1BADF /* onyx.wav in Resources */,
+				7B78C2FE2D0952B500D1BADF /* shimmer.wav in Resources */,
+				7B78C2FF2D0952B500D1BADF /* alloy.wav in Resources */,
+				7B78C3002D0952B500D1BADF /* fable.wav in Resources */,
+				7B78C3012D0952B500D1BADF /* echo.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,18 +379,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B93FE572D0792920058F09A /* OpenAIResponse.swift in Sources */,
+				7BB6AE372D0CE318008EB2F2 /* Array.swift in Sources */,
+				7BB6AE3B2D0CE6A2008EB2F2 /* StatusView.swift in Sources */,
 				7B93FE202D0548080058F09A /* HomeView.swift in Sources */,
 				7B93FE302D0559450058F09A /* ModeSelectionButton.swift in Sources */,
+				7B78C24F2D09466500D1BADF /* DALLEVoices.swift in Sources */,
+				7BB6AE392D0CE63E008EB2F2 /* StoryState.swift in Sources */,
 				7B93FE272D05496D0058F09A /* AboutView.swift in Sources */,
 				7B93FE292D054A510058F09A /* BackgroundView.swift in Sources */,
 				7B93FE372D056E580058F09A /* LibraryView.swift in Sources */,
 				7B93FE2E2D054F5E0058F09A /* Chapter.swift in Sources */,
+				7B78C2452D093DAB00D1BADF /* DALLEImageResponse.swift in Sources */,
 				7B93FE552D0792690058F09A /* OpenAIAPIManager.swift in Sources */,
 				7B93FE3B2D05700C0058F09A /* ChapterView.swift in Sources */,
 				7B93FE322D0559720058F09A /* PromptInputView.swift in Sources */,
 				7B93FE592D07AA5A0058F09A /* APIKey.swift in Sources */,
 				7B93FE212D0548080058F09A /* DreamWriterApp.swift in Sources */,
 				7B93FE392D056FA90058F09A /* StoryView.swift in Sources */,
+				7B78C2432D093A6000D1BADF /* ChapterStore.swift in Sources */,
 				7B93FE2C2D054F450058F09A /* Story.swift in Sources */,
 				7B93FE3D2D057C2D0058F09A /* LibraryListItemView.swift in Sources */,
 				7B93FE3F2D057C580058F09A /* ChapterListItemView.swift in Sources */,
@@ -506,8 +566,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -535,8 +596,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -664,6 +726,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7B78C2F22D094A6A00D1BADF /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fuzzzlove/swiftui-image-viewer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		7B93FE332D056A3A0058F09A /* XCRemoteSwiftPackageReference "SwiftOpenAI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftBeta/SwiftOpenAI.git";
@@ -675,6 +745,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7B78C2F32D094A6A00D1BADF /* SwiftUIImageViewer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B78C2F22D094A6A00D1BADF /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
+			productName = SwiftUIImageViewer;
+		};
 		7B93FE342D056A3A0058F09A /* SwiftOpenAI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7B93FE332D056A3A0058F09A /* XCRemoteSwiftPackageReference "SwiftOpenAI" */;

@@ -25,14 +25,7 @@ struct ChapterListItemView: View {
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(.nearWhite)
                     
-                    if chapter.isCreated {
-                        Label("Fully developed", systemImage: "checkmark.circle")
-                            .foregroundStyle(.green)
-                    } else {
-                        Label("Not finished yet", systemImage: "xmark.circle")
-                            .foregroundStyle(.red)
-                    }
-                    
+                    StatusView(state: chapter.status)
                     
                 }
                 
@@ -51,9 +44,9 @@ struct ChapterListItemView: View {
 #Preview {
     // Example preview using mock data
     let mockChapters = [
-        Chapter(number: 1, title: "Chapter 1", text: "This is chapter one.", isCreated: true),
-        Chapter(number: 2, title: "Chapter 2", text: "This is chapter two.", isCreated: false)
+        Chapter(number: 1, title: "Chapter 1", text: "This is chapter one.", status: .partial),
+        Chapter(number: 2, title: "Chapter 2", text: "This is chapter two.", status: .full)
     ]
-    let mockStory = Story(title: "Mock Story", chapters: mockChapters, prompt: "Test prompt for the test application", isCompleted: false)
+    let mockStory = Story(title: "Mock Story", chapters: mockChapters, prompt: "Test prompt for the test application")
     StoryView(story: mockStory)
 }

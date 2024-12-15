@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct AboutView: View {
     @Environment(\.dismiss) private var dismiss
-
+    
+    @State private var selectedVoice: DALLEVoiceSelection = DALLEVoices.getDefaultVoice()
+    @State private var audioPlayer: AVAudioPlayer?
     
     var body: some View {
         
@@ -53,39 +56,64 @@ struct AboutView: View {
                 Spacer()
                 
                 ZStack {
-                    BackgroundView(uiColor: UIColor(named: "darkNavy") ?? .black, rounded: true, radius: 15)
+                    BackgroundView(color: .darkerNavy)
                     
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Developed by Matt McDonnell")
-                                .multilineTextAlignment(.leading)
-                                .foregroundStyle(.white)
-                                .fontWeight(.bold)
-                            
-                            
-                            Text("Generative AI Tools - Final Project")
-                                .multilineTextAlignment(.leading)
-                                .foregroundStyle(.white)
-                            
-                            Text("Fall 2024")
-                                .multilineTextAlignment(.leading)
-                                .foregroundStyle(.white)
-                                .fontWeight(.light)
-                            
-                            Button {
-                                
-                            } label: {
-                                Label("Send Feedback", systemImage: "envelope")
+                    List {
+                        Section {
+                            ForEach(DALLEVoiceSelection.allCases, id: \.self) { voice in
+                                HStack {
+                                    Text(voice.description)
+                                        .foregroundStyle(.nearWhite)
+                                    
+                                    Spacer()
+                                    
+                                    if voice == selectedVoice {
+                                        Image(systemName: "checkmark")
+                                            .foregroundColor(.mediumBlue)
+                                    }
+                                }
+                                .listRowBackground(Color.lightNavy)
+                                .contentShape(Rectangle())
+                                .onTapGesture {
+                                    selectVoice(voice)
+                                }
                             }
-                            .padding(.top)
+                        } header: {
+                            Text("Default Voice Selection")
+                                .foregroundStyle(.nearWhite)
+                        } footer: {
+                            Text("Choose which voice you'd like to hear by default when doing text-to-speech in your stories.")
+                                .foregroundStyle(.nearWhite)
                         }
                         
-                        Spacer()
+                        
+                        Section {
+                            VStack(alignment: .leading) {
+                                Text("Developed by Matt McDonnell")
+                                    .foregroundStyle(.nearWhite)
+                                    .fontWeight(.bold)
+                                
+                                Text("Generative AI Tools - Final Project")
+                                    .foregroundStyle(.nearWhite)
+                                
+                                Text("Fall 2024")
+                                    .fontWeight(.light)
+                                    .foregroundStyle(.nearWhite)
+                                    .padding(.bottom)
+                            }
+                            .listRowBackground(Color.lightNavy)
+                        } header: {
+                            Text("Project Information")
+                                .foregroundStyle(.nearWhite)
+                        }
                     }
-                    .padding()
+                    .listStyle(.insetGrouped)
+                    .scrollContentBackground(.hidden)
+                    .background(Color.darkerNavy)
+                    
+                    Spacer()
                     
                 }
-                .fixedSize(horizontal: false, vertical: true)
                 
                 Spacer()
                 Spacer()
@@ -94,7 +122,37 @@ struct AboutView: View {
             .padding()
             
         }
+        .onAppear {
+            UITableView.appearance().separatorColor = UIColor.white
+        }
+        .onDisappear {
+            UITableView.appearance().separatorColor = nil // Reset to default
+        }
         
+    }
+    
+    private func selectVoice(_ voice: DALLEVoiceSelection) {
+        selectedVoice = voice
+        playSample(for: voice)
+    }
+    
+    private func playSample(for voice: DALLEVoiceSelection) {
+        guard let sampleFile = DALLEVoices().getAudioSample(for: voice),
+              let url = Bundle.main.url(forResource: sampleFile, withExtension: nil) else {
+            print("Error: Could not find sample file for voice \(voice)")
+            return
+        }
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        } catch {
+            print("Error: Failed to play audio sample - \(error.localizedDescription)")
+        }
+    }
+    
+    private func saveDefaultVoice() {
+        DALLEVoices.setDefaultVoice(selectedVoice)
     }
 }
 

@@ -11,17 +11,22 @@ import SwiftData
 @Model
 final class Story: Identifiable {
     @Attribute(.unique) var id: UUID
+    @Attribute var status: StoryState
+
     var title: String
     var chapters: [Chapter]
     var prompt: String
-    var isCompleted: Bool // To track if the story is fully created
+    
+    var sortedChapters: [Chapter] {
+        chapters.sorted { $0.number < $1.number }
+    }
 
-    init(title: String, chapters: [Chapter] = [], prompt: String, isCompleted: Bool = false) {
+    init(title: String, chapters: [Chapter] = [], prompt: String, status: StoryState = .notDeveloped) {
         self.id = UUID()
         self.title = title
         self.chapters = chapters
         self.prompt = prompt
-        self.isCompleted = isCompleted
+        self.status = status
     }
 
     // MARK: - Persistence Functions
@@ -64,5 +69,21 @@ final class Story: Identifiable {
             return
         }
         context.delete(self)
+    }
+    
+    func updateStatus() {
+        var completed = true
+        
+        for chapter in sortedChapters {
+            if chapter.status != .full {
+                completed = false
+            }
+        }
+        
+        if completed {
+            status = .full
+        } else {
+            status = .partial
+        }
     }
 }

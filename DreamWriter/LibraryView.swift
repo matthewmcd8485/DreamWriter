@@ -14,12 +14,12 @@ struct LibraryView: View {
     
     // Dummy Data for Preview
     let mockChapters1 = [
-        Chapter(number: 1, title: "Chapter 1", text: "This is the first chapter.", isCreated: true),
-        Chapter(number: 2, title: "Chapter 2", text: "This is the second chapter.", isCreated: true)
+        Chapter(number: 1, title: "Chapter 1", text: "This is the first chapter."),
+        Chapter(number: 2, title: "Chapter 2", text: "This is the second chapter.")
     ]
     let mockChapters2 = [
-        Chapter(number: 1, title: "Intro", text: "Introduction to the story.", isCreated: true),
-        Chapter(number: 2, title: "The Journey", text: nil, isCreated: false)
+        Chapter(number: 1, title: "Intro", text: "Introduction to the story."),
+        Chapter(number: 2, title: "The Journey", text: nil)
     ]
     
     
@@ -67,6 +67,7 @@ struct LibraryView: View {
                 Label("Create Story", systemImage: "plus")
             }
             .buttonStyle(.borderedProminent)
+            .tint(.mediumBlue)
             
         }
     }
@@ -76,8 +77,7 @@ struct LibraryView: View {
         let mockStory1 = Story(
             title: "The Great Adventure",
             chapters: mockChapters1,
-            prompt: "Test prompt for the test application",
-            isCompleted: true
+            prompt: "Test prompt for the test application"
         )
         modelContext.insert(mockStory1)
     }
