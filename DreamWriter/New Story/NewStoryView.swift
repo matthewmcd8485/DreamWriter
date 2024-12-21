@@ -1,5 +1,5 @@
 //
-//  PromptInputView.swift
+//  NewStoryView.swift
 //  DreamWriter
 //
 //  Created by Matthew McDonnell on 12/7/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct PromptInputView: View {
+struct NewStoryView: View {
     @Environment(\.modelContext) private var modelContext
     
     @Binding var selectedTab: Int
@@ -67,7 +67,7 @@ struct PromptInputView: View {
     }
 }
 
-extension PromptInputView {
+extension NewStoryView {
     // Header View
     private var headerView: some View {
         HStack {
@@ -212,7 +212,7 @@ extension PromptInputView {
 }
 
 // MARK: - Helper Methods
-extension PromptInputView {
+extension NewStoryView {
     private func createStory() {
         isLoading = true
 
@@ -271,5 +271,5 @@ extension PromptInputView {
 }
 
 #Preview {
-    PromptInputView(selectedTab: .constant(1))
+    NewStoryView(selectedTab: .constant(1))
 }

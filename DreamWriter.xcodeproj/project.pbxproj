@@ -27,8 +27,7 @@
 		7B93FE292D054A510058F09A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE282D054A510058F09A /* BackgroundView.swift */; };
 		7B93FE2C2D054F450058F09A /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE2B2D054F450058F09A /* Story.swift */; };
 		7B93FE2E2D054F5E0058F09A /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE2D2D054F5E0058F09A /* Chapter.swift */; };
-		7B93FE302D0559450058F09A /* ModeSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE2F2D0559450058F09A /* ModeSelectionButton.swift */; };
-		7B93FE322D0559720058F09A /* PromptInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE312D0559720058F09A /* PromptInputView.swift */; };
+		7B93FE322D0559720058F09A /* NewStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE312D0559720058F09A /* NewStoryView.swift */; };
 		7B93FE352D056A3A0058F09A /* SwiftOpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 7B93FE342D056A3A0058F09A /* SwiftOpenAI */; };
 		7B93FE372D056E580058F09A /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE362D056E580058F09A /* LibraryView.swift */; };
 		7B93FE392D056FA90058F09A /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE382D056FA90058F09A /* StoryView.swift */; };
@@ -85,8 +84,7 @@
 		7B93FE282D054A510058F09A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		7B93FE2B2D054F450058F09A /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		7B93FE2D2D054F5E0058F09A /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
-		7B93FE2F2D0559450058F09A /* ModeSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionButton.swift; sourceTree = "<group>"; };
-		7B93FE312D0559720058F09A /* PromptInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptInputView.swift; sourceTree = "<group>"; };
+		7B93FE312D0559720058F09A /* NewStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStoryView.swift; sourceTree = "<group>"; };
 		7B93FE362D056E580058F09A /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		7B93FE382D056FA90058F09A /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		7B93FE3A2D05700C0058F09A /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
@@ -187,18 +185,11 @@
 			isa = PBXGroup;
 			children = (
 				7B93FE1C2D0548080058F09A /* DreamWriterApp.swift */,
-				7B93FE262D05496D0058F09A /* AboutView.swift */,
-				7B93FE1B2D0548080058F09A /* HomeTabView.swift */,
-				C9AD91C12D16820D00BA886C /* ExploreView.swift */,
-				7B93FE2F2D0559450058F09A /* ModeSelectionButton.swift */,
-				7B93FE312D0559720058F09A /* PromptInputView.swift */,
-				7B93FE362D056E580058F09A /* LibraryView.swift */,
-				7B93FE3C2D057C2D0058F09A /* LibraryListItemView.swift */,
-				7B93FE3E2D057C580058F09A /* ChapterListItemView.swift */,
-				7B93FE382D056FA90058F09A /* StoryView.swift */,
-				7B93FE3A2D05700C0058F09A /* ChapterView.swift */,
-				7B93FE282D054A510058F09A /* BackgroundView.swift */,
-				7BB6AE3A2D0CE6A2008EB2F2 /* StatusView.swift */,
+				C9AD91C82D16890C00BA886C /* Explore */,
+				C9AD91C62D16889A00BA886C /* Library */,
+				C9AD91C92D16891B00BA886C /* New Story */,
+				C9AD91C72D1688AE00BA886C /* Story Viewer */,
+				C9AD91CA2D16892C00BA886C /* Supporting Views */,
 				7B93FE2A2D054F3B0058F09A /* Story Management */,
 				C9AD91BF2D167F0800BA886C /* OpenAI API */,
 				C9AD91C02D167F2700BA886C /* Extensions */,
@@ -240,6 +231,52 @@
 				7BB6AE362D0CE318008EB2F2 /* Array.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C9AD91C62D16889A00BA886C /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				7B93FE362D056E580058F09A /* LibraryView.swift */,
+				7B93FE3C2D057C2D0058F09A /* LibraryListItemView.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		C9AD91C72D1688AE00BA886C /* Story Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				7B93FE382D056FA90058F09A /* StoryView.swift */,
+				7B93FE3E2D057C580058F09A /* ChapterListItemView.swift */,
+				7B93FE3A2D05700C0058F09A /* ChapterView.swift */,
+			);
+			path = "Story Viewer";
+			sourceTree = "<group>";
+		};
+		C9AD91C82D16890C00BA886C /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				C9AD91C12D16820D00BA886C /* ExploreView.swift */,
+				7B93FE262D05496D0058F09A /* AboutView.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		C9AD91C92D16891B00BA886C /* New Story */ = {
+			isa = PBXGroup;
+			children = (
+				7B93FE312D0559720058F09A /* NewStoryView.swift */,
+			);
+			path = "New Story";
+			sourceTree = "<group>";
+		};
+		C9AD91CA2D16892C00BA886C /* Supporting Views */ = {
+			isa = PBXGroup;
+			children = (
+				7B93FE1B2D0548080058F09A /* HomeTabView.swift */,
+				7B93FE282D054A510058F09A /* BackgroundView.swift */,
+				7BB6AE3A2D0CE6A2008EB2F2 /* StatusView.swift */,
+			);
+			path = "Supporting Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,7 +442,6 @@
 				7BB6AE372D0CE318008EB2F2 /* Array.swift in Sources */,
 				7BB6AE3B2D0CE6A2008EB2F2 /* StatusView.swift in Sources */,
 				7B93FE202D0548080058F09A /* HomeTabView.swift in Sources */,
-				7B93FE302D0559450058F09A /* ModeSelectionButton.swift in Sources */,
 				7B78C24F2D09466500D1BADF /* DALLEVoices.swift in Sources */,
 				C96224C12D11F16C007B3534 /* APIKey.swift in Sources */,
 				C9AD91C22D16820D00BA886C /* ExploreView.swift in Sources */,
@@ -417,7 +453,7 @@
 				7B78C2452D093DAB00D1BADF /* DALLEImageResponse.swift in Sources */,
 				7B93FE552D0792690058F09A /* OpenAIAPIManager.swift in Sources */,
 				7B93FE3B2D05700C0058F09A /* ChapterView.swift in Sources */,
-				7B93FE322D0559720058F09A /* PromptInputView.swift in Sources */,
+				7B93FE322D0559720058F09A /* NewStoryView.swift in Sources */,
 				7B93FE212D0548080058F09A /* DreamWriterApp.swift in Sources */,
 				7B93FE392D056FA90058F09A /* StoryView.swift in Sources */,
 				7B78C2432D093A6000D1BADF /* ChapterStore.swift in Sources */,

@@ -21,7 +21,7 @@ struct HomeTabView: View {
                 }
                 .tag(0)
             
-            PromptInputView(selectedTab: $selectedTab)
+            NewStoryView(selectedTab: $selectedTab)
                 .tabItem {
                     Label("New Story", systemImage: "plus.square")
                 }
