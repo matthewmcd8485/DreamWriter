@@ -19,7 +19,7 @@
 		7B78C3012D0952B500D1BADF /* echo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7B78C2F72D0952B500D1BADF /* echo.wav */; };
 		7B93FE1E2D0548080058F09A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B93FE182D0548080058F09A /* Preview Assets.xcassets */; };
 		7B93FE1F2D0548080058F09A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B93FE1A2D0548080058F09A /* Assets.xcassets */; };
-		7B93FE202D0548080058F09A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE1B2D0548080058F09A /* HomeView.swift */; };
+		7B93FE202D0548080058F09A /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE1B2D0548080058F09A /* HomeTabView.swift */; };
 		7B93FE212D0548080058F09A /* DreamWriterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE1C2D0548080058F09A /* DreamWriterApp.swift */; };
 		7B93FE232D0548880058F09A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B93FE222D0548880058F09A /* LaunchScreen.storyboard */; };
 		7B93FE252D0549210058F09A /* RoundedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B93FE242D0549210058F09A /* RoundedLogo.png */; };
@@ -37,10 +37,12 @@
 		7B93FE3F2D057C580058F09A /* ChapterListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE3E2D057C580058F09A /* ChapterListItemView.swift */; };
 		7B93FE552D0792690058F09A /* OpenAIAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE542D0792690058F09A /* OpenAIAPIManager.swift */; };
 		7B93FE572D0792920058F09A /* OpenAIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE562D0792920058F09A /* OpenAIResponse.swift */; };
-		7B93FE592D07AA5A0058F09A /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93FE582D07AA5A0058F09A /* APIKey.swift */; };
 		7BB6AE372D0CE318008EB2F2 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6AE362D0CE318008EB2F2 /* Array.swift */; };
 		7BB6AE392D0CE63E008EB2F2 /* StoryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6AE382D0CE63E008EB2F2 /* StoryState.swift */; };
 		7BB6AE3B2D0CE6A2008EB2F2 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6AE3A2D0CE6A2008EB2F2 /* StatusView.swift */; };
+		C96224C12D11F16C007B3534 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96224C02D11F16C007B3534 /* APIKey.swift */; };
+		C9AD91C22D16820D00BA886C /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AD91C12D16820D00BA886C /* ExploreView.swift */; };
+		C9AD91C52D16857700BA886C /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C9AD91C42D16857700BA886C /* ConfettiSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +77,7 @@
 		7B78C2FB2D0952B500D1BADF /* shimmer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shimmer.wav; sourceTree = "<group>"; };
 		7B93FE182D0548080058F09A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7B93FE1A2D0548080058F09A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7B93FE1B2D0548080058F09A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7B93FE1B2D0548080058F09A /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		7B93FE1C2D0548080058F09A /* DreamWriterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamWriterApp.swift; sourceTree = "<group>"; };
 		7B93FE222D0548880058F09A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B93FE242D0549210058F09A /* RoundedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoundedLogo.png; sourceTree = "<group>"; };
@@ -92,10 +94,11 @@
 		7B93FE3E2D057C580058F09A /* ChapterListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterListItemView.swift; sourceTree = "<group>"; };
 		7B93FE542D0792690058F09A /* OpenAIAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIAPIManager.swift; sourceTree = "<group>"; };
 		7B93FE562D0792920058F09A /* OpenAIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIResponse.swift; sourceTree = "<group>"; };
-		7B93FE582D07AA5A0058F09A /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		7BB6AE362D0CE318008EB2F2 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		7BB6AE382D0CE63E008EB2F2 /* StoryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryState.swift; sourceTree = "<group>"; };
 		7BB6AE3A2D0CE6A2008EB2F2 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		C96224C02D11F16C007B3534 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		C9AD91C12D16820D00BA886C /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -116,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AD91C52D16857700BA886C /* ConfettiSwiftUI in Frameworks */,
 				7B78C2F42D094A6A00D1BADF /* SwiftUIImageViewer in Frameworks */,
 				7B93FE352D056A3A0058F09A /* SwiftOpenAI in Frameworks */,
 			);
@@ -184,7 +188,8 @@
 			children = (
 				7B93FE1C2D0548080058F09A /* DreamWriterApp.swift */,
 				7B93FE262D05496D0058F09A /* AboutView.swift */,
-				7B93FE1B2D0548080058F09A /* HomeView.swift */,
+				7B93FE1B2D0548080058F09A /* HomeTabView.swift */,
+				C9AD91C12D16820D00BA886C /* ExploreView.swift */,
 				7B93FE2F2D0559450058F09A /* ModeSelectionButton.swift */,
 				7B93FE312D0559720058F09A /* PromptInputView.swift */,
 				7B93FE362D056E580058F09A /* LibraryView.swift */,
@@ -195,6 +200,8 @@
 				7B93FE282D054A510058F09A /* BackgroundView.swift */,
 				7BB6AE3A2D0CE6A2008EB2F2 /* StatusView.swift */,
 				7B93FE2A2D054F3B0058F09A /* Story Management */,
+				C9AD91BF2D167F0800BA886C /* OpenAI API */,
+				C9AD91C02D167F2700BA886C /* Extensions */,
 				7B93FE1A2D0548080058F09A /* Assets.xcassets */,
 				7B93FE222D0548880058F09A /* LaunchScreen.storyboard */,
 				7B93FE242D0549210058F09A /* RoundedLogo.png */,
@@ -207,18 +214,32 @@
 		7B93FE2A2D054F3B0058F09A /* Story Management */ = {
 			isa = PBXGroup;
 			children = (
-				7B93FE542D0792690058F09A /* OpenAIAPIManager.swift */,
-				7B78C2442D093DAB00D1BADF /* DALLEImageResponse.swift */,
-				7B78C24E2D09466500D1BADF /* DALLEVoices.swift */,
-				7B93FE562D0792920058F09A /* OpenAIResponse.swift */,
 				7B93FE2B2D054F450058F09A /* Story.swift */,
 				7B93FE2D2D054F5E0058F09A /* Chapter.swift */,
 				7B78C2422D093A6000D1BADF /* ChapterStore.swift */,
-				7B93FE582D07AA5A0058F09A /* APIKey.swift */,
-				7BB6AE362D0CE318008EB2F2 /* Array.swift */,
 				7BB6AE382D0CE63E008EB2F2 /* StoryState.swift */,
 			);
 			path = "Story Management";
+			sourceTree = "<group>";
+		};
+		C9AD91BF2D167F0800BA886C /* OpenAI API */ = {
+			isa = PBXGroup;
+			children = (
+				C96224C02D11F16C007B3534 /* APIKey.swift */,
+				7B93FE542D0792690058F09A /* OpenAIAPIManager.swift */,
+				7B93FE562D0792920058F09A /* OpenAIResponse.swift */,
+				7B78C24E2D09466500D1BADF /* DALLEVoices.swift */,
+				7B78C2442D093DAB00D1BADF /* DALLEImageResponse.swift */,
+			);
+			path = "OpenAI API";
+			sourceTree = "<group>";
+		};
+		C9AD91C02D167F2700BA886C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7BB6AE362D0CE318008EB2F2 /* Array.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +261,7 @@
 			packageProductDependencies = (
 				7B93FE342D056A3A0058F09A /* SwiftOpenAI */,
 				7B78C2F32D094A6A00D1BADF /* SwiftUIImageViewer */,
+				C9AD91C42D16857700BA886C /* ConfettiSwiftUI */,
 			);
 			productName = DreamWriter;
 			productReference = 7B46FD1F2D0546C9008527EA /* DreamWriter.app */;
@@ -326,6 +348,7 @@
 			packageReferences = (
 				7B93FE332D056A3A0058F09A /* XCRemoteSwiftPackageReference "SwiftOpenAI" */,
 				7B78C2F22D094A6A00D1BADF /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
+				C9AD91C32D16857700BA886C /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7B46FD202D0546C9008527EA /* Products */;
@@ -381,9 +404,11 @@
 				7B93FE572D0792920058F09A /* OpenAIResponse.swift in Sources */,
 				7BB6AE372D0CE318008EB2F2 /* Array.swift in Sources */,
 				7BB6AE3B2D0CE6A2008EB2F2 /* StatusView.swift in Sources */,
-				7B93FE202D0548080058F09A /* HomeView.swift in Sources */,
+				7B93FE202D0548080058F09A /* HomeTabView.swift in Sources */,
 				7B93FE302D0559450058F09A /* ModeSelectionButton.swift in Sources */,
 				7B78C24F2D09466500D1BADF /* DALLEVoices.swift in Sources */,
+				C96224C12D11F16C007B3534 /* APIKey.swift in Sources */,
+				C9AD91C22D16820D00BA886C /* ExploreView.swift in Sources */,
 				7BB6AE392D0CE63E008EB2F2 /* StoryState.swift in Sources */,
 				7B93FE272D05496D0058F09A /* AboutView.swift in Sources */,
 				7B93FE292D054A510058F09A /* BackgroundView.swift in Sources */,
@@ -393,7 +418,6 @@
 				7B93FE552D0792690058F09A /* OpenAIAPIManager.swift in Sources */,
 				7B93FE3B2D05700C0058F09A /* ChapterView.swift in Sources */,
 				7B93FE322D0559720058F09A /* PromptInputView.swift in Sources */,
-				7B93FE592D07AA5A0058F09A /* APIKey.swift in Sources */,
 				7B93FE212D0548080058F09A /* DreamWriterApp.swift in Sources */,
 				7B93FE392D056FA90058F09A /* StoryView.swift in Sources */,
 				7B78C2432D093A6000D1BADF /* ChapterStore.swift in Sources */,
@@ -558,7 +582,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"DreamWriter/Preview Content\"";
 				DEVELOPMENT_TEAM = 5BE9AG9X7E;
 				ENABLE_PREVIEWS = YES;
@@ -567,8 +591,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,7 +612,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"DreamWriter/Preview Content\"";
 				DEVELOPMENT_TEAM = 5BE9AG9X7E;
 				ENABLE_PREVIEWS = YES;
@@ -597,8 +621,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -742,6 +766,14 @@
 				minimumVersion = 1.9.0;
 			};
 		};
+		C9AD91C32D16857700BA886C /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -754,6 +786,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7B93FE332D056A3A0058F09A /* XCRemoteSwiftPackageReference "SwiftOpenAI" */;
 			productName = SwiftOpenAI;
+		};
+		C9AD91C42D16857700BA886C /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9AD91C32D16857700BA886C /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

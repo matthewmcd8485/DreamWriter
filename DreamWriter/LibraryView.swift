@@ -12,6 +12,8 @@ struct LibraryView: View {
     @Query(sort: \Story.title, order: .forward) private var stories: [Story]
     @Environment(\.modelContext) private var modelContext
     
+    @Binding var selectedTab: Int
+    
     // Dummy Data for Preview
     let mockChapters1 = [
         Chapter(number: 1, title: "Chapter 1", text: "This is the first chapter."),
@@ -24,28 +26,27 @@ struct LibraryView: View {
     
     
     var body: some View {
-        ZStack {
-            BackgroundView(color: .darkerNavy)
-            
-            ScrollView {
-                if stories.isEmpty {
-                    placeholderView
-                } else {
-                    ForEach(stories) { story in
-                        NavigationLink(destination: StoryView(story: story)) {
-                            LibraryListItemView(story: story)
-                                .padding(.horizontal)
+        NavigationStack {
+            ZStack {
+                BackgroundView(color: .darkerNavy)
+                
+                ScrollView {
+                    if stories.isEmpty {
+                        placeholderView
+                    } else {
+                        ForEach(stories) { story in
+                            NavigationLink(destination: StoryView(story: story)) {
+                                LibraryListItemView(story: story)
+                                    .padding(.horizontal)
+                            }
+                            .listRowBackground(Color.lightNavy)
                         }
-                        .listRowBackground(Color.lightNavy)
                     }
                 }
+                .padding(.vertical)
             }
-            .padding(.vertical)
-        }
-        .navigationTitle("Library")
-        .navigationBarTitleDisplayMode(.large)
-        .onAppear {
-            print("Stories count: \(stories.count)") // Debug: Check if stories are being queried
+            .navigationTitle("Library")
+            .navigationBarTitleDisplayMode(.large)
         }
         
     }
@@ -63,7 +64,9 @@ struct LibraryView: View {
                 .foregroundStyle(.nearWhite)
                 .padding(.bottom)
             
-            NavigationLink(destination: PromptInputView()) {
+            Button {
+                selectedTab = 1
+            } label: {
                 Label("Create Story", systemImage: "plus")
             }
             .buttonStyle(.borderedProminent)
@@ -84,6 +87,6 @@ struct LibraryView: View {
 }
 
 #Preview {
-    LibraryView()
+    LibraryView(selectedTab: .constant(0))
         .modelContainer(for: [Story.self, Chapter.self], inMemory: true)
 }

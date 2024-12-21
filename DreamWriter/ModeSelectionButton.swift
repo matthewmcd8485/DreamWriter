@@ -47,5 +47,5 @@ struct ModeSelectionButton: View {
 }
 
 #Preview {
-    HomeView()
+    HomeTabView()
 }

@@ -43,6 +43,6 @@ struct LibraryListItemView: View {
 }
 
 #Preview {
-    LibraryView()
+    LibraryView(selectedTab: .constant(0))
         .modelContainer(for: [Story.self, Chapter.self], inMemory: true)
 }

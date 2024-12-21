@@ -11,6 +11,8 @@ import SwiftData
 struct PromptInputView: View {
     @Environment(\.modelContext) private var modelContext
     
+    @Binding var selectedTab: Int
+    
     @State private var storyIdea = ""
     @State private var numberOfChapters = 3
     @State private var currentPromptIndex = 0
@@ -48,10 +50,11 @@ struct PromptInputView: View {
                     textEditorView
                     Spacer()
                     createButton
+                    Spacer()
                 }
                 .padding()
             }
-            .navigationTitle("")
+            .navigationBarHidden(true)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbarBackground(Color.darkerNavy, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
@@ -268,5 +271,5 @@ extension PromptInputView {
 }
 
 #Preview {
-    PromptInputView()
+    PromptInputView(selectedTab: .constant(1))
 }

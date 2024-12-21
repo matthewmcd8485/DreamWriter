@@ -16,7 +16,7 @@ struct DreamWriterApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeTabView()
                 .modelContainer(for: [Story.self, Chapter.self])
         }
     }
