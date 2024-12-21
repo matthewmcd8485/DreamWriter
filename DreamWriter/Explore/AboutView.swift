@@ -43,7 +43,7 @@ struct AboutView: View {
                             .font(.system(size: 28, weight: .bold, design: .rounded))
                             .foregroundStyle(.white)
                         
-                        Text("Version 1.0 • beta (2)")
+                        Text("Version 1.0 • beta (3)")
                             .font(.system(size: 18, weight: .light))
                             .foregroundStyle(.white)
                         
